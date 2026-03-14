@@ -27,28 +27,28 @@ html {
 
 @font-face {
     font-family: "Braille_6P_Normal";
-    src: url("Fonts/ONCE_CBE_6.ttf");
+    src: url("fonts/ONCE_CBE_6.ttf");
     font-style: normal;
     font-display: block;
 }
 
 @font-face {
     font-family: "Braille_6P_Framed";
-    src: url("Fonts/ONCE_CBE_6E.ttf");
+    src: url("fonts/ONCE_CBE_6E.ttf");
     font-style: normal;
     font-display: block;
 }
 
 @font-face {
     font-family: "Braille_6P_Guided";
-    src: url("Fonts/ONCE_CBE_6G.ttf");
+    src: url("fonts/ONCE_CBE_6G.ttf");
     font-style: normal;
     font-display: block;
 }
 
 @font-face {
     font-family: "Braille_6P_Guided_Framed";
-    src: url("Fonts/ONCE_CBE_6EG.ttf");
+    src: url("fonts/ONCE_CBE_6EG.ttf");
     font-style: normal;
     font-display: block;
 }
