@@ -1,2 +1,2 @@
-# Alfabeto-braille-online-espa-ol-de-6-puntos
-Alfabeto braille online español de 6 puntos
+# Alfabeto-braille-online-español-de-6-puntos
+Alfabeto braille online español de 6 puntos elaborado con las fuentes tipográficas gratuitas de la comisión braille española (CBE) que ofrecen en (https://www.once.es/servicios-sociales/braille/comision-braille-espanola), y siguiendo las directrices del documento técnico B15 de escritura con la fuente braille de la CBE (https://www.once.es/servicios-sociales/braille/comision-braille-espanola/documentos-tecnicos/documentos-tecnicos-relacionados-con-el-braille/documentos/b15-escritura-con-fuente-braille-v2.pdf)
