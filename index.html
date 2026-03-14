@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Alfabeto Braille Online de 6 puntos</title>
+</head>
+
+<style>
+html {
+    background: radial-gradient(circle, rgb(225, 225, 225), rgb(255, 255, 255));
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    .main_container, .right_container {
+        width: 90% !important;
+    }
+    .braille {       
+        font-size: 20pt;
+    }
+    .normal {
+        font-size: 18pt;
+    }
+    table {
+        font-size: 0.8em;
+        overflow-x: auto;
+        display: block;
+    }
+    .subsection_container {
+        overflow-x: auto;
+    }
+}
+
+@font-face {
+    font-family: "Braille_6P_Normal";
+    src: url("Fonts/ONCE_CBE_6.ttf");
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Braille_6P_Framed";
+    src: url("Fonts/");
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Braille_6P_Guided";
+    src: url("Fonts/ONCE_CBE_6.ttf");
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Braille_6P_Guided_Framed";
+    src: url("Fonts/ONCE_CBE_6.ttf");
+    font-style: normal;
+    font-display: block;
+}
+
+.braille {
+    font-family: "Braille_6P_Normal";
+    font-size: 26pt;
+    margin: 0.5rem;
+
+}
+
+.normal {
+    font-family:"";
+    font-size: 25pt;
+    margin: 0.5rem;
+}
+
+h1 {
+    margin: 0.3rem;
+}
+
+.title_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+    margin: 1rem;
+    overflow-x: auto;
+}
+
+.main_container {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 1rem;
+    width: 70%;
+}
+
+main {
+    display: flex;
+}
+
+.right_container {
+    box-sizing: content-box;
+    align-items: flex-start;
+    margin: 1rem;
+    width: 30%;
+    overflow-x: auto;
+}
+
+#signs {
+    display: flex;
+}
+
+#punctuation_signs, #diacritic_signs {
+    display: flex;
+    flex-direction: column;
+}
+
+.subsection_container {
+    display: flex;
+    box-sizing: content-box;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1rem;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.section_container {
+    display: block;
+    flex-direction: column;
+    overflow: visible;
+}
+
+.section_container:nth-child(1) { order: 1; } /* Abecedario */
+.section_container:nth-child(2) { order: 2; } /* Dígitos y caracteres */
+.section_container:nth-child(3) { order: 3; } /* Signos */
+
+.footer_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.footer_container p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.3rem;
+    
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button {
+    width: 10rem;
+    height: 5rem;
+    font-size: 15pt;
+    background: black;
+    color: white;
+}
+
+.origin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+table {
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    table-layout: auto;
+}
+
+td {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    font-size: large;
+}
+ 
+</style>
+
+<body>
+  <header class="title_container braille">
+    <section>
+      <h1 class="normal">Alfabeto braille online español de 6 puntos</h1>
+      <h1 class="braille">{Alfabeto braille online español de #f puntos</h1>
+    </section>
+  </header>
+
+  <main>
+    <section class="main_container">
+     <div class="section_container" id="alphabet">
+        <section class="subsection_container" style="order:1;">
+            <h1>Letras</h1>
+            <table>
+                <tr class="braille">
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                    <td>e</td>
+                    <td>f</td>
+                    <td>g</td>
+                    <td>h</td>
+                    <td>i</td>
+                    <td>j</td>
+                    <td>k</td>
+                    <td>l</td>
+                    <td>m</td>
+                    <td>n</td>
+                    <td>o</td>
+                    <td>p</td>
+                    <td>q</td>
+                    <td>r</td>
+                    <td>s</td>
+                    <td>t</td>
+                    <td>u</td>
+                    <td>v</td>
+                    <td>w</td>
+                    <td>x</td>
+                    <td>y</td>
+                    <td>z</td>
+                </tr>
+                <tr class="normal">
+                    <td>a</td>
+                    <td>b</td>
+                    <td>c</td>
+                    <td>d</td>
+                    <td>e</td>
+                    <td>f</td>
+                    <td>g</td>
+                    <td>h</td>
+                    <td>i</td>
+                    <td>j</td>
+                    <td>k</td>
+                    <td>l</td>
+                    <td>m</td>
+                    <td>n</td>
+                    <td>o</td>
+                    <td>p</td>
+                    <td>q</td>
+                    <td>r</td>
+                    <td>s</td>
+                    <td>t</td>
+                    <td>u</td>
+                    <td>v</td>
+                    <td>w</td>
+                    <td>x</td>
+                    <td>y</td>
+                    <td>z</td>
+                </tr>
+            </table>    
+        </section>    
+
+        <section class="subsection_container" style="order:2;">
+            <h1>Mayúsculas</h1>
+            <table>
+                <tr class="braille">
+                    <td>{</td>
+                    <td>{a</td>
+                    <td>{b</td>
+                    <td>{c</td>
+                    <td>{d</td>
+                    <td>{e</td>
+                    <td>{f</td>
+                    <td>{g</td>
+                    <td>{h</td>
+                    <td>{i</td>
+                    <td>{j</td>
+                    <td>{k</td>
+                    <td>{l</td>
+                    <td>{m</td>
+                    <td>{n</td>
+                    <td>{o</td>
+                    <td>{p</td>
+                    <td>{q</td>
+                    <td>{r</td>
+                    <td>{s</td>
+                    <td>{t</td>
+                    <td>{u</td>
+                    <td>{v</td>
+                    <td>{w</td>
+                    <td>{x</td>
+                    <td>{y</td>
+                    <td>{z</td>
+                </tr>
+                <tr class="normal">
+                    <td>Prefijo ({)</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                    <td>U</td>
+                    <td>V</td>
+                    <td>W</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                </tr>
+            </table>            
+        </section> 
+     </div>
+     
+     <div class="section_container" id="others">
+        <section class="subsection_container">
+            <h1>Dígitos</h1>
+            <table>
+                <tr class="braille">
+                    <td>#</td>
+                    <td>#a</td>
+                    <td>#b</td>
+                    <td>#c</td>
+                    <td>#d</td>
+                    <td>#e</td>
+                    <td>#f</td>
+                    <td>#g</td>
+                    <td>#h</td>
+                    <td>#i</td>
+                    <td>#j</td>
+                </tr>
+                <tr class="normal">
+                    <td>Prefijo (#)</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section class="subsection_container">
+            <h1>Carácteres de la fuente digital</h1>
+            <table>
+                <p>Éstos carácteres aparecen al escribir literlamente las siguientes letras, ten en cuenta que ésta no es necesariamente la forma de escribir éstos en la pantalla, para saber como se deben utilizar consulta el <a href="https://www.once.es/servicios-sociales/braille/comision-braille-espanola/documentos-tecnicos/documentos-tecnicos-relacionados-con-el-braille/documentos/b15-escritura-con-fuente-braille-v2.pdf">documento técnico B15 de la CBE</a>.</p>
+                <tr class="braille">
+                    <td><pre> </pre></td>
+                    <td>"</td>
+                    <td>#</td>
+                    <td>&</td>
+                    <td>%</td>
+                    <td>'</td>
+                    <td>*</td>
+                    <td>+</td>
+                    <td>,</td>
+                    <td>-</td>
+                    <td>.</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>:</td>
+                    <td>;</td>
+                    <td><</td>
+                    <td>=</td>
+                    <td>></td>
+                    <td>?</td>
+                    <td>@</td>
+                    <td>\</td>
+                    <td>/</td>
+                    <td>^</td>
+                    <td>_</td>
+                    <td>{</td>
+                    <td>}</td>
+                </tr> 
+
+                <tr class="normal">
+                    <td>Espacio</td>
+                    <td>"</td>
+                    <td>#</td>
+                    <td>&</td>
+                    <td>%</td>
+                    <td>'</td>
+                    <td>*</td>
+                    <td>+</td>
+                    <td>,</td>
+                    <td>-</td>
+                    <td>.</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>:</td>
+                    <td>;</td>
+                    <td><</td>
+                    <td>=</td>
+                    <td>></td>
+                    <td>?</td>
+                    <td>@</td>
+                    <td>\</td>
+                    <td>/</td>
+                    <td>^</td>
+                    <td>_</td>
+                    <td>{</td>
+                    <td>}</td>               
+                <tr>
+
+                </tr>
+            </table>
+
+        </section>
+     </div>
+    </section>
+
+    <section class="right_container">
+    <div class="section_container"  id="signs">
+            <section class="subsection_container" id="punctuation_signs" style="order:1;">
+            <h1>Signos de puntuación</h1>
+                <table>
+                    <tr class="braille">
+                        <td>.</td>
+                        <td>,</td>
+                        <td>;</td>
+                        <td>:</td>
+                        <td>-</td>
+                        <td>=</td>
+                        <td>?</td>
+                        <td>?</td>
+                        <td>+</td>
+                        <td>+</td>
+                        <td><</td>
+                        <td>2</td>
+                        <td>Ì</td>
+                        <td>...</td>
+                    </tr>
+                    <tr class="normal">
+                        <td>.</td>
+                        <td>,</td>
+                        <td>;</td>
+                        <td>:</td>
+                        <td>-</td>
+                        <td>=</td>
+                        <td>¿</td>
+                        <td>?</td>
+                        <td>¡</td>
+                        <td>!</td>
+                        <td>"</td>
+                        <td>(</td>
+                        <td>)</td>
+                        <td>...</td>
+                    </tr>
+                </table>
+        </section>
+        
+    <section class="subsection_container" id="diacritical_signs" style="order:2;">
+            <h1>Signos diacríticos</h1>
+            <table>
+                <p>Castellano</p>
+                <tr class="braille">
+                    <td>á</td>
+                    <td>é</td>
+                    <td>í</td>
+                    <td>ó</td>
+                    <td>ú</td>
+                    <td>ü</td>
+                    <td>ñ</td>
+                </tr>
+                <tr class="normal">
+                    <td>á</td>
+                    <td>é</td>
+                    <td>í</td>
+                    <td>ó</td>
+                    <td>ú</td>
+                    <td>ü</td>
+                    <td>ñ</td>
+                </tr>
+            </table>
+
+            <table>
+                <p>Valenciano y Catalán</p>
+                <tr class="braille">
+                    <td>à</td>
+                    <td>\</td>
+                    <td>é</td>
+                    <td>í</td>
+                    <td>7</td>
+                    <td>9</td>
+                    <td>ò</td>
+                    <td>ú</td>
+                    <td>ü</td>
+                    <td>&</td>
+                </tr>
+                <tr class="normal">
+                    <td>à</td>
+                    <td>é</td>
+                    <td>è</td>
+                    <td>í</td>
+                    <td>ï</td>
+                    <td>ó</td>
+                    <td>ò</td>
+                    <td>ú</td>
+                    <td>ü</td>
+                    <td>Ç</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    </section>
+  </main>
+
+  <footer>
+    <section class="footer_container">
+      <section class="buttons">
+        <button>Normal</button>
+        <button>Guía</button>
+        <button>Enmarcado</button>
+        <button>Guía enmarcado</button>
+      </section>
+
+      <section class="origin">
+        <section>
+        <h1>Fuentes</h1>
+            <p><a href="https://www.once.es/servicios-sociales/braille/comision-braille-espanola">Comisión Braille Española (CBE) - ONCE</a></p>
+            <p><a href=https://www.once.es/servicios-sociales/braille/comision-braille-espanola/documentos-tecnicos/documentos-tecnicos-relacionados-con-el-braille/documentos/b15-escritura-con-fuente-braille-v2.pdf>Documento técnico uso de fuentes braille</a></p>
+        </section>
+
+        <section>
+            <button href="https://github.com/Rudedev1">Volver a Github -> </button>
+        </section>
+      </section>
+    </section>
+ </footer>
+</body>
+</html>   
