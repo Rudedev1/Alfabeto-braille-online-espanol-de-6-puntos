@@ -23,6 +23,11 @@ html {
     .subsection_container {
         overflow-x: auto;
     }
+    .buttons {
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+    }
 }
 
 @font-face {
